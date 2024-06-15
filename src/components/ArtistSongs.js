@@ -29,23 +29,9 @@ const ArtistSongs = () => {
   if (error) return <p>{error}</p>;
 
   return (
-    // <div>
-    //   <h1>Artist Songs</h1>
-    //   <div className="song-list">
-    //     {songs.map((songObj) => (
-    //       <div key={songObj.track.track_id} className="song-card">
-    //         <h2>{songObj.track.track_name}</h2>
-    //         <p>Album: {songObj.track.album_name}</p>
-    //         <p>Artist: {songObj.track.artist_name}</p>
-    //         <Link to={`/lyrics/${songObj.track.track_id}`}>
-    //           <button>View Lyrics</button>
-    //         </Link>
-    //       </div>
-    //     ))}
-    //   </div>
-    // </div>
     <div>
       <h1>Artists Songs</h1>
+      <p>Found {songs.length} songs</p>
       <div>
         {songs.map((songObj) => (
           <Card style={{ width: "18rem" }}>

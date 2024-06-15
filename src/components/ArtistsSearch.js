@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { searchArtists } from "../API/musixMatch.js";
 import { Link } from "react-router-dom";
+import { Bars } from "react-loader-spinner";
 
 const ArtistsSearch = () => {
   const [artistName, setArtistName] = useState("");
@@ -16,7 +17,7 @@ const ArtistsSearch = () => {
       setArtists(artistData);
 
       if (artistData.length === 0) {
-        setError("No matching results");
+        setError("No matching results. Please check your request.");
       }
     } catch (err) {
       setError("Failed to fetch artists");
@@ -24,7 +25,20 @@ const ArtistsSearch = () => {
     setLoading(false);
   };
 
-  if (loading) return <p>Loading...</p>;
+  if (loading)
+    return (
+      <div>
+        <Bars
+          height="50"
+          width="50"
+          color="#000000"
+          ariaLabel="bars-loading"
+          wrapperStyle={{}}
+          wrapperClass=""
+          visible={true}
+        />
+      </div>
+    );
   if (error) return <p>{error}</p>;
 
   return (
@@ -41,10 +55,10 @@ const ArtistsSearch = () => {
       </button>
       {error && <p>{error}</p>}
       <div className="artist-list">
-        {artists.map((artistObj) => (
-          <div key={artistObj.artist.artist_id} className="artist-card">
-            <h2>{artistObj.artist.artist_name}</h2>
-            <Link to={`/songs/${artistObj.artist.artist_id}`}>View Songs</Link>
+        {artists.map((allArtists) => (
+          <div key={allArtists.artist.artist_id} className="artist-card">
+            <h2>{allArtists.artist.artist_name}</h2>
+            <Link to={`/songs/${allArtists.artist.artist_id}`}>View Songs</Link>
           </div>
         ))}
       </div>
