@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getSongLyrics } from "../API/musixMatch.js";
 
-const SongLyrics = () => {
+const SongsLyrics = () => {
   const { trackId } = useParams();
   const [lyrics, setLyrics] = useState("");
   const [loading, setLoading] = useState(true);
@@ -35,4 +35,4 @@ const SongLyrics = () => {
   );
 };
 
-export default SongLyrics;
+export default SongsLyrics;
