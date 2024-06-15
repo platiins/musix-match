@@ -1,0 +1,155 @@
+@font-face {
+  font-family: "Syne Mono";
+  src: url(../fonts/Syne_Mono/SyneMono-Regular.ttf) format(truetype);
+  font-weight: 400;
+}
+#nav-bar {
+  font-family: "Syne Mono", monospace;
+}
+#nav-bar .nav-brand {
+  font-size: 30px;
+}
+#nav-bar .nav-link {
+  font-size: 20px;
+  text-align: end;
+}
+
+.loader-container {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  height: 90vh;
+}
+
+#not-found-page {
+  font-family: "Syne Mono", monospace;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  height: 90vh;
+}
+#not-found-page h1 {
+  font-size: 50px;
+}
+#not-found-page .home-link {
+  font-size: 25px;
+  color: #000000;
+}
+
+.error-message {
+  text-align: center;
+  font-size: 18px;
+}
+
+#search-page {
+  font-family: "Syne Mono", monospace;
+}
+#search-page .artist-search {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  margin: 70px 0;
+}
+#search-page .artist-search__title {
+  font-size: 35px;
+  margin: 0 20px 0 50px;
+  margin-bottom: 0;
+  text-align: center;
+}
+#search-page .artist-search__input-box {
+  width: 350px;
+  margin-right: 50px;
+}
+#search-page .artist-search__input-box .search-input {
+  height: 45px;
+  font-size: 20px;
+}
+#search-page .artist-search__input-box .search-input:focus {
+  outline: none;
+  box-shadow: 0 0 5px #000000;
+  border: #000000 solid 1px;
+}
+#search-page .artist-search__input-box .search-btn {
+  width: 50px;
+}
+#search-page .artist-search__input-box .search-btn:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+#search-page .artists-list {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+#search-page .artists-list__card {
+  width: 35%;
+}
+#search-page .artists-list__card:hover {
+  box-shadow: 0 0 15px #000000;
+  border: solid 1px #000000;
+}
+#search-page .artists-list__card--content {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+#search-page .artists-list__card--content .card-title {
+  margin-bottom: 0;
+  width: 75%;
+}
+
+#songs-page {
+  font-family: "Syne Mono", monospace;
+}
+#songs-page .songs-header {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  margin-top: 70px;
+  padding: 0 200px;
+}
+#songs-page .songs-header__title {
+  font-size: 25px;
+  margin: 0;
+}
+#songs-page .songs-header__amount {
+  font-size: 18px;
+  margin: 0;
+}
+#songs-page .error-container {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  margin-top: 70px;
+}
+#songs-page .all-songs-container {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 50px 50px 100px;
+}
+#songs-page .all-songs-container .song-card {
+  width: 40%;
+  min-width: 350px;
+}
+#songs-page .all-songs-container .song-card:hover {
+  box-shadow: 0 0 15px #000000;
+  border: solid 1px #000000;
+}/*# sourceMappingURL=index.css.map */

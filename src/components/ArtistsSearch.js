@@ -1,7 +1,15 @@
 import React, { useState } from "react";
 import { searchArtists } from "../API/musixMatch.js";
 import { Link } from "react-router-dom";
-import { Bars } from "react-loader-spinner";
+import { FiSearch } from "react-icons/fi";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import InputGroup from "react-bootstrap/InputGroup";
+import Card from "react-bootstrap/Card";
+
+import Loader from "./Loader.js";
+
+import "../assets/styles/index.scss";
 
 const ArtistsSearch = () => {
   const [artistName, setArtistName] = useState("");
@@ -17,52 +25,60 @@ const ArtistsSearch = () => {
       setArtists(artistData);
 
       if (artistData.length === 0) {
-        setError("No matching results. Please check your request.");
+        setError("No matching results. Please double-check your request.");
       }
     } catch (err) {
-      setError("Failed to fetch artists");
+      setError("Network issue. Please check the connection.");
     }
     setLoading(false);
   };
 
-  if (loading)
-    return (
-      <div>
-        <Bars
-          height="50"
-          width="50"
-          color="#000000"
-          ariaLabel="bars-loading"
-          wrapperStyle={{}}
-          wrapperClass=""
-          visible={true}
-        />
-      </div>
-    );
-  if (error) return <p>{error}</p>;
+  if (loading) return <Loader />;
 
   return (
-    <div>
-      <h1>Search Artists</h1>
-      <input
-        type="text"
-        value={artistName}
-        onChange={(e) => setArtistName(e.target.value)}
-        placeholder="Enter artist name"
-      />
-      <button onClick={handleSearch} disabled={loading}>
-        {loading ? "Searching..." : "Search"}
-      </button>
-      {error && <p>{error}</p>}
-      <div className="artist-list">
+    <section id="search-page">
+      <section className="artist-search">
+        <h1 className="artist-search__title">Search Artists:</h1>
+        <InputGroup className="artist-search__input-box">
+          <Form.Control
+            required
+            type="text"
+            value={artistName}
+            onChange={(e) => setArtistName(e.target.value)}
+            placeholder="e.g. Prodigy"
+            className="search-input"
+          />
+          <Button
+            variant="outline-secondary"
+            id="button-addon2"
+            onClick={handleSearch}
+            disabled={loading}
+            className="search-btn"
+          >
+            <FiSearch />
+          </Button>
+        </InputGroup>
+      </section>
+      {error && <p className="error-message">{error}</p>}
+
+      <div className="artists-list">
         {artists.map((allArtists) => (
-          <div key={allArtists.artist.artist_id} className="artist-card">
-            <h2>{allArtists.artist.artist_name}</h2>
-            <Link to={`/songs/${allArtists.artist.artist_id}`}>View Songs</Link>
-          </div>
+          <Card
+            key={allArtists.artist.artist_id}
+            className="artists-list__card"
+          >
+            <Card.Body className="artists-list__card--content">
+              <Card.Title className="card-title">
+                {allArtists.artist.artist_name}
+              </Card.Title>
+              <Link to={`/songs/${allArtists.artist.artist_id}`}>
+                View Songs
+              </Link>
+            </Card.Body>
+          </Card>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

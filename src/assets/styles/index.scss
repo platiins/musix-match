@@ -1,0 +1,159 @@
+@use "mixins" as *;
+
+@font-face {
+  font-family: "Syne Mono";
+  src: url(../fonts/Syne_Mono/SyneMono-Regular.ttf) format(truetype);
+  font-weight: 400;
+}
+
+// NAVIGATION BAR
+
+#nav-bar {
+  font-family: "Syne Mono", monospace;
+
+  .nav-brand {
+    font-size: 30px;
+  }
+  .nav-link {
+    font-size: 20px;
+    text-align: end;
+  }
+}
+
+// LOADER
+
+.loader-container {
+  @include flex(row, center, center, 0);
+  height: 90vh;
+}
+
+// NOT FOUND PAGE
+
+#not-found-page {
+  font-family: "Syne Mono", monospace;
+  @include flex(column, center, center, 30px);
+  height: 90vh;
+
+  h1 {
+    font-size: 50px;
+  }
+
+  .home-link {
+    font-size: 25px;
+    color: #000000;
+  }
+}
+
+// HELPERS
+
+// search error message:
+.error-message {
+  text-align: center;
+  font-size: 18px;
+}
+
+// MAIN SEARCH PAGE
+
+#search-page {
+  font-family: "Syne Mono", monospace;
+
+  .artist-search {
+    @include flex(row, center, center, 0);
+    margin: 70px 0;
+
+    &__title {
+      font-size: 35px;
+      margin: 0 20px 0 50px;
+      margin-bottom: 0;
+      text-align: center;
+    }
+
+    &__input-box {
+      width: 350px;
+      margin-right: 50px;
+
+      .search-input {
+        height: 45px;
+        font-size: 20px;
+
+        &:focus {
+          outline: none;
+          box-shadow: 0 0 5px #000000;
+          border: #000000 solid 1px;
+        }
+      }
+
+      .search-btn {
+        width: 50px;
+
+        &:hover {
+          background-color: #000000;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+
+  .artists-list {
+    @include flex(column, center, center, 20px);
+
+    &__card {
+      width: 35%;
+
+      &:hover {
+        box-shadow: 0 0 15px #000000;
+        border: solid 1px #000000;
+      }
+
+      &--content {
+        @include flex(row, space-between, center, 30px);
+
+        .card-title {
+          margin-bottom: 0;
+          width: 75%;
+        }
+      }
+    }
+  }
+}
+
+#songs-page {
+  font-family: "Syne Mono", monospace;
+
+  .songs-header {
+    @include flex(row, space-between, center, 30px);
+    margin-top: 70px;
+    padding: 0 200px;
+
+    &__title {
+      font-size: 25px;
+      margin: 0;
+    }
+
+    &__amount {
+      font-size: 18px;
+      margin: 0;
+    }
+  }
+
+  .error-container {
+    @include flex(column, center, center, 0);
+    margin-top: 70px;
+  }
+
+  .all-songs-container {
+    @include flex(row, center, center, 20px);
+    flex-wrap: wrap;
+    margin: 50px 50px 100px;
+
+    .song-card {
+      width: 40%;
+      min-width: 350px;
+
+      &:hover {
+        box-shadow: 0 0 15px #000000;
+        border: solid 1px #000000;
+      }
+    }
+  }
+}

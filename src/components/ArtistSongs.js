@@ -3,6 +3,9 @@ import { useParams, Link } from "react-router-dom";
 import { getArtistSongs } from "../API/musixMatch";
 import Card from "react-bootstrap/Card";
 
+import "../assets/styles/index.scss";
+import Loader from "./Loader";
+
 const ArtistSongs = () => {
   const { artistId } = useParams();
   const [songs, setSongs] = useState([]);
@@ -16,8 +19,12 @@ const ArtistSongs = () => {
       try {
         const songData = await getArtistSongs(artistId);
         setSongs(songData);
+
+        if (songData.length === 0) {
+          setError("No song records found.");
+        }
       } catch (err) {
-        setError("Failed to fetch songs");
+        setError("Network issue. Please check the connection.");
       }
       setLoading(false);
     };
@@ -25,30 +32,36 @@ const ArtistSongs = () => {
     fetchSongs();
   }, [artistId]);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>{error}</p>;
+  if (loading) return <Loader />;
 
   return (
-    <div>
-      <h1>Artists Songs</h1>
-      <p>Found {songs.length} songs</p>
-      <div>
-        {songs.map((songObj) => (
-          <Card style={{ width: "18rem" }}>
+    <section id="songs-page">
+      <div className="songs-header">
+        <h1 className="songs-header__title">Search Results:</h1>
+        <p className="songs-header__amount">{songs.length} songs</p>
+      </div>
+      {error && (
+        <div className="error-container">
+          <p className="error-message">{error}</p>
+          <Card.Link to={`/`} as={Link}>
+            Back to Search
+          </Card.Link>
+        </div>
+      )}
+      <div className="all-songs-container">
+        {songs.map((allSongs) => (
+          <Card className="song-card">
             <Card.Body>
-              <Card.Title>{songObj.track.track_name}</Card.Title>
-              <Card.Subtitle className="mb-2 text-muted">
-                Artist: {songObj.track.artist_name}
-              </Card.Subtitle>
-              <Card.Text>Album: {songObj.track.album_name}</Card.Text>
-              <Card.Link to={`/lyrics/${songObj.track.track_id}`} as={Link}>
+              <Card.Title>{allSongs.track.track_name}</Card.Title>
+              <Card.Text>Album: {allSongs.track.album_name}</Card.Text>
+              <Card.Link to={`/lyrics/${allSongs.track.track_id}`} as={Link}>
                 View Lyrics
               </Card.Link>
             </Card.Body>
           </Card>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

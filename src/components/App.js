@@ -9,8 +9,9 @@ import ArtistsSearch from "./ArtistsSearch";
 import ArtistSongs from "./ArtistSongs";
 import RouterLayout from "./RouterLayout";
 import SongsLyrics from "./SongsLyrics";
+import NotFound from "./NotFound";
 
-import "../styles/styles.scss";
+import "../assets/styles/index.scss";
 
 function App() {
   const router = createBrowserRouter(
@@ -19,7 +20,7 @@ function App() {
         <Route path="/" element={<ArtistsSearch />} />
         <Route path="songs/:artistId" element={<ArtistSongs />} />
         <Route path="lyrics/:trackId" element={<SongsLyrics />} />
-        <Route path="*" />
+        <Route path="*" element={<NotFound />} />
       </Route>
     )
   );

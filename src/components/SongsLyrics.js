@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getSongLyrics } from "../API/musixMatch.js";
+import { Bars } from "react-loader-spinner";
 
 const SongsLyrics = () => {
   const { trackId } = useParams();
@@ -24,7 +25,19 @@ const SongsLyrics = () => {
     fetchLyrics();
   }, [trackId]);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return (
+    <div>
+      <Bars
+        height="50"
+        width="50"
+        color="#000000"
+        ariaLabel="bars-loading"
+        wrapperStyle={{}}
+        wrapperClass=""
+        visible={true}
+      />
+    </div>
+  );
   if (error) return <p>{error}</p>;
 
   return (

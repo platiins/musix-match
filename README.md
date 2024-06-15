@@ -7,7 +7,5 @@ used:
 
 
 
-
-to do: 
-- if artist has no songs - show "no results"
-- loading animation
+to do:
+- add footer
