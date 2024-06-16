@@ -16,7 +16,7 @@ const SongsLyrics = () => {
   const [artistName, setArtistName] = useState("");
   const [trackName, setTrackName] = useState("");
 
-  useEffect(() => {
+  useEffect(() => { 
     const fetchLyrics = async () => {
       setLoading(true);
       setError(null);

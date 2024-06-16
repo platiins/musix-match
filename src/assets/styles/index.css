@@ -268,7 +268,8 @@
 }
 #lyrics-page .lyrics-title {
   font-size: 30px;
-  margin: 70px 50px 20px;
+  margin: 70px 70px 20px;
+  text-align: center;
 }
 #lyrics-page .lyrics-text {
   font-family: "Syne Mono", monospace;
