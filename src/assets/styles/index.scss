@@ -16,6 +16,7 @@
 
 .link-style {
   color: inherit;
+  text-align: center;
 }
 
 .sm-link {
@@ -182,8 +183,9 @@
   @include primaryPageStyle;
 
   .songs-header {
-    @include flex(row, space-between, center, 30px);
-    padding: 70px 200px 0;
+    @include flex(row, space-between, center, 20px);
+    padding: 70px 170px 50px;
+    text-align: center;
 
     &__title {
       font-size: 25px;
@@ -197,17 +199,17 @@
   }
 
   .error-container {
-    @include flex(column, center, center, 10px);
+    @include flex(column, center, center, 20px);
+    margin-top: 100px;
   }
 
   .all-songs-container {
     @include flex(row, center, center, 20px);
     flex-wrap: wrap;
-    margin: 50px 50px 0;
+    margin: 0 50px;
 
     .song-card {
-      width: 40%;
-      min-width: 350px;
+      width: 400px;
       background-color: #f8f9fa;
       border: solid 1px #000000;
 
@@ -299,6 +301,8 @@
     }
   }
 
+  // ARTIST SEARCH PAGE
+
   #search-page {
     .artist-search {
       @include flex(column, center, center, 20px);
@@ -320,6 +324,37 @@
           padding: 16px;
 
           .card-title {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+
+  // SONGS LIST PAGE
+
+  #songs-page {
+    .songs-header {
+      @include flex(row, center, center, 30px);
+      padding: 50px;
+    }
+
+    .all-songs-container {
+      @include flex(column, center, center, 20px);
+
+      .song-card {
+        width: 300px;
+
+        &__body {
+          @include flex(column, center, center, 20px);
+          padding: 16px;
+
+          &--name {
+            width: 100%;
+            text-align: center;
+          }
+
+          &--link {
             text-align: center;
           }
         }
