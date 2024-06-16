@@ -30,6 +30,17 @@ export const getArtistSongs = async (artistId) => {
   return response.data.message.body.track_list;
 };
 
+// DATA: GET NAME AND ARTIST OF THE SONG
+export const getTrackDetails = async (trackId) => {
+  const response = await axios.get(`${CORS_URL}${BASE_URL}track.get`, {
+    params: {
+      apikey: API_KEY,
+      track_id: trackId,
+    },
+  });
+  return response.data.message.body.track;
+};
+
 // DATA: LYRICS OF THE SONG
 export const getSongLyrics = async (trackId) => {
   const response = await axios.get(`${CORS_URL}${BASE_URL}track.lyrics.get`, {

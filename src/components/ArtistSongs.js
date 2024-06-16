@@ -57,7 +57,7 @@ const ArtistSongs = () => {
                 <Card.Text>Album: {allSongs.track.album_name}</Card.Text>
               </div>
               <Card.Link
-                className="link-style"
+                className="link-styl song-card__body--link"
                 to={`/lyrics/${allSongs.track.track_id}`}
                 as={Link}
               >

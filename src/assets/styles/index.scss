@@ -170,6 +170,11 @@
         &--name {
           width: 70%;
         }
+
+        &--link {
+          text-align: end;
+          color: inherit;
+        }
       }
     }
   }
@@ -178,16 +183,50 @@
 // LYRICS PAGE
 
 #lyrics-page {
-  @include flex(column, center, center, 0);
+  @include flex(column, center, center, 10px);
   font-family: "Syne Mono", monospace;
+  margin: 30px 50px;
 
   .lyrics-title {
-    font-size: 25px;
-    margin: 70px 50px;
+    font-size: 30px;
+    margin: 30px 50px 20px;
   }
 
   .lyrics-text {
+    font-family: "Syne Mono", monospace;
     font-size: 18px;
-    border: 1px solid black;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    text-align: center;
+    padding: 30px 20px;
+
+    &:hover {
+      box-shadow: 0 0 5px #000000;
+      border: #000000 solid 1px;
+    }
+  }
+
+  .share-container {
+    @include flex(row, center, center, 20px);
+
+    .share-title {
+      font-size: 22px;
+      margin: 0;
+    }
+
+    .sm-link {
+      &__btn {
+        background-color: transparent;
+        font-size: 25px;
+        transition-duration: 500ms;
+        outline: none;
+        border: none;
+
+        &:hover {
+          transform: scale(1.5);
+          transition-duration: 500ms;
+        }
+      }
+    }
   }
 }
