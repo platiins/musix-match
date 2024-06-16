@@ -29,14 +29,14 @@ function Header() {
           lyricFinder
         </Navbar.Brand>
         <Navbar.Toggle />
-        <Navbar.Collapse className="justify-content-end">
+        <Navbar.Collapse className="justify-content-end display-none">
           <Navbar.Text
-            className="nav-link"
+            className="nav-link display-none"
             style={{
               color: theme === "light" ? "#212529" : "#F8F9FA",
             }}
           >
-            data from{" "}
+            <p className="mb-0">data from</p>
             <a
               href="https://developer.musixmatch.com/"
               style={{

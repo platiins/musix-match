@@ -6,3 +6,13 @@
   align-items: $alignItems;
   gap: $flexGap;
 }
+
+@mixin primaryPageStyle {
+  height: 100%;
+  min-height: 90vh;
+  padding-bottom: 170px;
+  font-family: "Syne Mono", monospace;
+  background-color: #f8f9fa;
+  
+  
+}

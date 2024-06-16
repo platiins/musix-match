@@ -11,6 +11,7 @@
 .error-message {
   text-align: center;
   font-size: 18px;
+  margin: 0 50px;
 }
 
 .link-style {
@@ -40,7 +41,7 @@
   font-size: 25px;
   color: #000000;
   position: absolute;
-  top: 15px;
+  top: 16px;
   right: 50px;
 }
 
@@ -48,17 +49,14 @@
 
 .loader-container {
   @include flex(row, center, center, 0);
-  height: 90vh;
-  background-color: #f8f9fa;
+  @include primaryPageStyle;
 }
 
 // NOT FOUND PAGE
 
 #not-found-page {
-  font-family: "Syne Mono", monospace;
   @include flex(column, center, center, 30px);
-  height: 90vh;
-  background-color: #f8f9fa;
+  @include primaryPageStyle;
 
   .error-code {
     font-size: 50px;
@@ -76,11 +74,15 @@
 #nav-bar {
   font-family: "Syne Mono", monospace;
   background-color: #e9ecef;
+  padding: 10px 100px;
 
   .nav-brand {
     font-size: 30px;
+    margin-right: 50px;
   }
+
   .nav-link {
+    @include flex(row, center, center, 10px);
     font-size: 20px;
     text-align: end;
   }
@@ -108,24 +110,20 @@
 // MAIN SEARCH PAGE
 
 #search-page {
-  font-family: "Syne Mono", monospace;
-  background-color: #f8f9fa;
-  height: 90vh;
+  @include primaryPageStyle;
 
   .artist-search {
-    @include flex(row, center, center, 0);
+    @include flex(row, center, center, 20px);
     padding: 70px 0;
 
     &__title {
       font-size: 35px;
-      margin: 0 20px 0 50px;
       margin-bottom: 0;
       text-align: center;
     }
 
     &__input-box {
       width: 350px;
-      margin-right: 50px;
 
       .search-input {
         height: 50px;
@@ -157,7 +155,7 @@
     @include flex(column, center, center, 20px);
 
     &__card {
-      width: 35%;
+      width: 500px;
       background-color: #f8f9fa;
       border: solid 1px #000000;
 
@@ -181,9 +179,7 @@
 // SONGS PAGE
 
 #songs-page {
-  font-family: "Syne Mono", monospace;
-  height: 90vh;
-  background-color: #f8f9fa;
+  @include primaryPageStyle;
 
   .songs-header {
     @include flex(row, space-between, center, 30px);
@@ -201,14 +197,13 @@
   }
 
   .error-container {
-    @include flex(column, center, center, 0);
-    margin-top: 70px;
+    @include flex(column, center, center, 10px);
   }
 
   .all-songs-container {
     @include flex(row, center, center, 20px);
     flex-wrap: wrap;
-    margin: 50px 50px 100px;
+    margin: 50px 50px 0;
 
     .song-card {
       width: 40%;
@@ -242,10 +237,7 @@
 
 #lyrics-page {
   @include flex(column, center, center, 10px);
-  font-family: "Syne Mono", monospace;
-  background-color: #f8f9fa;
-  padding: 30px 50px 120px;
-  height: 90vh;
+  @include primaryPageStyle;
 
   .lyrics-title {
     font-size: 30px;
@@ -260,9 +252,13 @@
     text-align: center;
     padding: 30px 20px;
     border: #000000 solid 1px;
+    overflow-y: scroll;
 
     &:hover {
       box-shadow: 0 0 5px #000000;
+    }
+    &::-webkit-scrollbar {
+      background-color: transparent;
     }
   }
 
@@ -272,6 +268,62 @@
     .share-title {
       font-size: 22px;
       margin: 0;
+    }
+  }
+}
+
+// RESPONSIVNESS
+
+@media (max-width: 700px) {
+  // NAV BAR
+
+  #nav-bar {
+    padding: 10px 50px;
+
+    .nav-link {
+      p,
+      a {
+        display: none;
+      }
+    }
+  }
+
+  // FOOTER
+
+  #footer {
+    @include flex(column, center, center, 10px);
+    padding: 15px 50px;
+
+    .footer__author {
+      display: none;
+    }
+  }
+
+  #search-page {
+    .artist-search {
+      @include flex(column, center, center, 20px);
+      padding: 50px 0;
+
+      &__input-box {
+        width: 250px;
+      }
+    }
+
+    .artists-list {
+      @include flex(column, center, center, 20px);
+
+      &__card {
+        width: 300px;
+
+        &--content {
+          @include flex(column, center, left, 10px);
+          padding: 16px;
+
+          .card-title {
+            text-align: center;
+          }
+        }
+      }
     }
   }
 }
