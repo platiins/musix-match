@@ -43,7 +43,14 @@ const ArtistsSearch = () => {
       style={{ backgroundColor: theme === "light" ? "#f8f9fa" : "#343A40" }}
     >
       <section className="artist-search">
-        <h1 className="artist-search__title">Search Artists:</h1>
+        <h1
+          className="artist-search__title"
+          style={{
+            color: theme === "light" ? "#212529" : "#F8F9FA",
+          }}
+        >
+          Search Artists:
+        </h1>
         <InputGroup className="artist-search__input-box">
           <Form.Control
             required
@@ -52,6 +59,10 @@ const ArtistsSearch = () => {
             onChange={(e) => setArtistName(e.target.value)}
             placeholder="e.g. Prodigy"
             className="search-input"
+            style={{
+              backgroundColor: theme === "light" ? "#f8f9fa" : "#343A40",
+              color: theme === "light" ? "#212529" : "#F8F9FA",
+            }}
           />
           <Button
             variant="outline-secondary"
@@ -59,6 +70,10 @@ const ArtistsSearch = () => {
             onClick={handleSearch}
             disabled={loading}
             className="search-btn"
+            style={{
+              backgroundColor: theme === "light" ? "#f8f9fa" : "#343A40",
+              color: theme === "light" ? "#212529" : "#F8F9FA",
+            }}
           >
             <FiSearch />
           </Button>
@@ -71,6 +86,10 @@ const ArtistsSearch = () => {
           <Card
             key={allArtists.artist.artist_id}
             className="artists-list__card"
+            style={{
+              backgroundColor: theme === "light" ? "#f8f9fa" : "#343A40",
+              color: theme === "light" ? "#212529" : "#F8F9FA",
+            }}
           >
             <Card.Body className="artists-list__card--content">
               <Card.Title className="card-title">

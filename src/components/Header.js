@@ -18,17 +18,43 @@ function Header() {
       }}
     >
       <Container>
-        <Navbar.Brand as={NavLink} to="/" className="nav-brand">
+        <Navbar.Brand
+          as={NavLink}
+          to="/"
+          className="nav-brand"
+          style={{
+            color: theme === "light" ? "#212529" : "#F8F9FA",
+          }}
+        >
           lyricFinder
         </Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
-          <Navbar.Text className="nav-link">
-            data from <a href="https://developer.musixmatch.com/">MusixMatch</a>
+          <Navbar.Text
+            className="nav-link"
+            style={{
+              color: theme === "light" ? "#212529" : "#F8F9FA",
+            }}
+          >
+            data from{" "}
+            <a
+              href="https://developer.musixmatch.com/"
+              style={{
+                color: theme === "light" ? "#212529" : "#F8F9FA",
+              }}
+            >
+              MusixMatch
+            </a>
           </Navbar.Text>
         </Navbar.Collapse>
       </Container>
-      <button className="change-theme-btn" onClick={toggleTheme}>
+      <button
+        className="change-theme-btn sm-link__btn"
+        onClick={toggleTheme}
+        style={{
+          color: theme === "light" ? "#212529" : "#F8F9FA",
+        }}
+      >
         <VscColorMode />
       </button>
     </Navbar>

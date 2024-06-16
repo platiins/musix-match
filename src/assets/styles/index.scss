@@ -41,7 +41,7 @@
   color: #000000;
   position: absolute;
   top: 15px;
-  right: 30px;
+  right: 50px;
 }
 
 // LOADER
@@ -89,11 +89,11 @@
 
 .footer {
   @include flex(row, space-between, center, 30px);
-
-  // position: fixed;
-  // bottom: 0;
-  // left: 0;
-  padding: 10px 100px;
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 15px 100px;
   font-family: "Syne Mono", monospace;
 
   background-color: #e9ecef;
@@ -130,20 +130,23 @@
         height: 50px;
         font-size: 20px;
         background-color: #f8f9fa;
+        border: 1px solid #212529;
 
         &:focus {
           outline: none;
-          box-shadow: 0 0 5px #000000;
-          border: #000000 solid 1px;
+          box-shadow: 0 0 10px #000000;
+        }
+        &::placeholder {
+          color: #6c757d;
         }
       }
 
       .search-btn {
         width: 50px;
+        border: 1px solid #212529;
 
         &:hover {
-          background-color: #000000;
-          color: #ffffff;
+          box-shadow: 0 0 10px #000000;
         }
       }
     }
@@ -155,10 +158,10 @@
     &__card {
       width: 35%;
       background-color: #f8f9fa;
+      border: solid 1px #000000;
 
       &:hover {
         box-shadow: 0 0 15px #000000;
-        border: solid 1px #000000;
       }
 
       &--content {
@@ -240,7 +243,7 @@
   @include flex(column, center, center, 10px);
   font-family: "Syne Mono", monospace;
   background-color: #f8f9fa;
-  padding: 30px 50px 70px;
+  padding: 30px 50px 120px;
 
   .lyrics-title {
     font-size: 30px;
