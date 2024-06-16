@@ -209,7 +209,8 @@
     margin: 0 50px;
 
     .song-card {
-      width: 400px;
+      min-width: 400px;
+      width: 40%;
       background-color: #f8f9fa;
       border: solid 1px #000000;
 
@@ -243,7 +244,7 @@
 
   .lyrics-title {
     font-size: 30px;
-    margin: 30px 50px 20px;
+    margin: 70px 50px 20px;
   }
 
   .lyrics-text {
@@ -343,7 +344,8 @@
       @include flex(column, center, center, 20px);
 
       .song-card {
-        width: 300px;
+        min-width: 300px;
+        width: 80%;
 
         &__body {
           @include flex(column, center, center, 20px);
@@ -359,6 +361,25 @@
           }
         }
       }
+    }
+  }
+
+  // LYRICS PAGE
+
+  #lyrics-page {
+    .lyrics-title {
+      font-size: 25px;
+      margin: 50px 20px 20px;
+    }
+
+    .lyrics-text {
+      font-size: 16px;
+      width: 80%;
+      min-width: 300px;
+    }
+
+    .share-title {
+      font-size: 18px;
     }
   }
 }

@@ -45,7 +45,7 @@
   gap: 0;
   height: 100%;
   min-height: 90vh;
-  padding-bottom: 170px;
+  padding-bottom: 150px;
   font-family: "Syne Mono", monospace;
   background-color: #f8f9fa;
 }
@@ -58,7 +58,7 @@
   gap: 30px;
   height: 100%;
   min-height: 90vh;
-  padding-bottom: 170px;
+  padding-bottom: 150px;
   font-family: "Syne Mono", monospace;
   background-color: #f8f9fa;
 }
@@ -116,7 +116,7 @@
 #search-page {
   height: 100%;
   min-height: 90vh;
-  padding-bottom: 170px;
+  padding-bottom: 150px;
   font-family: "Syne Mono", monospace;
   background-color: #f8f9fa;
 }
@@ -190,7 +190,7 @@
 #songs-page {
   height: 100%;
   min-height: 90vh;
-  padding-bottom: 170px;
+  padding-bottom: 150px;
   font-family: "Syne Mono", monospace;
   background-color: #f8f9fa;
 }
@@ -229,7 +229,8 @@
   margin: 0 50px;
 }
 #songs-page .all-songs-container .song-card {
-  width: 400px;
+  min-width: 400px;
+  width: 40%;
   background-color: #f8f9fa;
   border: solid 1px #000000;
 }
@@ -261,13 +262,13 @@
   gap: 10px;
   height: 100%;
   min-height: 90vh;
-  padding-bottom: 170px;
+  padding-bottom: 150px;
   font-family: "Syne Mono", monospace;
   background-color: #f8f9fa;
 }
 #lyrics-page .lyrics-title {
   font-size: 30px;
-  margin: 30px 50px 20px;
+  margin: 70px 50px 20px;
 }
 #lyrics-page .lyrics-text {
   font-family: "Syne Mono", monospace;
@@ -364,7 +365,8 @@
     gap: 20px;
   }
   #songs-page .all-songs-container .song-card {
-    width: 300px;
+    min-width: 300px;
+    width: 80%;
   }
   #songs-page .all-songs-container .song-card__body {
     display: flex;
@@ -380,5 +382,17 @@
   }
   #songs-page .all-songs-container .song-card__body--link {
     text-align: center;
+  }
+  #lyrics-page .lyrics-title {
+    font-size: 25px;
+    margin: 50px 20px 20px;
+  }
+  #lyrics-page .lyrics-text {
+    font-size: 16px;
+    width: 80%;
+    min-width: 300px;
+  }
+  #lyrics-page .share-title {
+    font-size: 18px;
   }
 }/*# sourceMappingURL=index.css.map */
