@@ -71,7 +71,10 @@ const ArtistsSearch = () => {
               <Card.Title className="card-title">
                 {allArtists.artist.artist_name}
               </Card.Title>
-              <Link to={`/songs/${allArtists.artist.artist_id}`}>
+              <Link
+                className="link-style"
+                to={`/songs/${allArtists.artist.artist_id}`}
+              >
                 View Songs
               </Link>
             </Card.Body>

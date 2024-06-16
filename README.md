@@ -9,3 +9,4 @@ used:
 
 to do:
 - add footer
+- add sm icons to lyrics page as share option

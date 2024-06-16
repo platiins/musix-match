@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getSongLyrics } from "../API/musixMatch.js";
-import { Bars } from "react-loader-spinner";
+import Loader from "./Loader.js";
 
 const SongsLyrics = () => {
   const { trackId } = useParams();
@@ -17,7 +17,7 @@ const SongsLyrics = () => {
         const lyricsData = await getSongLyrics(trackId);
         setLyrics(lyricsData);
       } catch (err) {
-        setError("Failed to fetch lyrics");
+        setError("Network issue. Please check the connection.");
       }
       setLoading(false);
     };
@@ -25,25 +25,13 @@ const SongsLyrics = () => {
     fetchLyrics();
   }, [trackId]);
 
-  if (loading) return (
-    <div>
-      <Bars
-        height="50"
-        width="50"
-        color="#000000"
-        ariaLabel="bars-loading"
-        wrapperStyle={{}}
-        wrapperClass=""
-        visible={true}
-      />
-    </div>
-  );
-  if (error) return <p>{error}</p>;
+  if (loading) return <Loader />;
 
   return (
-    <div>
-      <h1>Song Lyrics</h1>
-      <pre>{lyrics}</pre>
+    <div id="lyrics-page">
+      <h1 className="lyrics-title">Song Lyrics</h1>
+      {error && <p className="error-message">{error}</p>}
+      <div className="lyrics-text">{lyrics}</div>
     </div>
   );
 };

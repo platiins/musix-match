@@ -10,6 +10,7 @@
 
 #nav-bar {
   font-family: "Syne Mono", monospace;
+  background-color: #e9ecef;
 
   .nav-brand {
     font-size: 30px;
@@ -34,22 +35,25 @@
   @include flex(column, center, center, 30px);
   height: 90vh;
 
-  h1 {
+  .error-code {
     font-size: 50px;
   }
 
   .home-link {
-    font-size: 25px;
+    font-size: 20px;
     color: #000000;
   }
 }
 
 // HELPERS
 
-// search error message:
 .error-message {
   text-align: center;
   font-size: 18px;
+}
+
+.link-style {
+  color: inherit;
 }
 
 // MAIN SEARCH PAGE
@@ -107,6 +111,7 @@
 
       &--content {
         @include flex(row, space-between, center, 30px);
+        padding: 16px 32px;
 
         .card-title {
           margin-bottom: 0;
@@ -116,6 +121,8 @@
     }
   }
 }
+
+// SONGS PAGE
 
 #songs-page {
   font-family: "Syne Mono", monospace;
@@ -154,6 +161,33 @@
         box-shadow: 0 0 15px #000000;
         border: solid 1px #000000;
       }
+
+      &__body {
+        @include flex(row, space-between, center, 50px);
+        color: #000000;
+        padding: 16px 32px;
+
+        &--name {
+          width: 70%;
+        }
+      }
     }
+  }
+}
+
+// LYRICS PAGE
+
+#lyrics-page {
+  @include flex(column, center, center, 0);
+  font-family: "Syne Mono", monospace;
+
+  .lyrics-title {
+    font-size: 25px;
+    margin: 70px 50px;
+  }
+
+  .lyrics-text {
+    font-size: 18px;
+    border: 1px solid black;
   }
 }

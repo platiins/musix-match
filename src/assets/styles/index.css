@@ -5,6 +5,7 @@
 }
 #nav-bar {
   font-family: "Syne Mono", monospace;
+  background-color: #e9ecef;
 }
 #nav-bar .nav-brand {
   font-size: 30px;
@@ -32,17 +33,21 @@
   gap: 30px;
   height: 90vh;
 }
-#not-found-page h1 {
+#not-found-page .error-code {
   font-size: 50px;
 }
 #not-found-page .home-link {
-  font-size: 25px;
+  font-size: 20px;
   color: #000000;
 }
 
 .error-message {
   text-align: center;
   font-size: 18px;
+}
+
+.link-style {
+  color: inherit;
 }
 
 #search-page {
@@ -102,6 +107,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 30px;
+  padding: 16px 32px;
 }
 #search-page .artists-list__card--content .card-title {
   margin-bottom: 0;
@@ -152,4 +158,33 @@
 #songs-page .all-songs-container .song-card:hover {
   box-shadow: 0 0 15px #000000;
   border: solid 1px #000000;
+}
+#songs-page .all-songs-container .song-card__body {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  color: #000000;
+  padding: 16px 32px;
+}
+#songs-page .all-songs-container .song-card__body--name {
+  width: 70%;
+}
+
+#lyrics-page {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  font-family: "Syne Mono", monospace;
+}
+#lyrics-page .lyrics-title {
+  font-size: 25px;
+  margin: 70px 50px;
+}
+#lyrics-page .lyrics-text {
+  font-size: 18px;
+  border: 1px solid black;
 }/*# sourceMappingURL=index.css.map */

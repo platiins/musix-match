@@ -7,7 +7,7 @@ import "../assets/styles/index.scss";
 
 function Header() {
   return (
-    <Navbar className="bg-body-tertiary" id="nav-bar">
+    <Navbar id="nav-bar">
       <Container>
         <Navbar.Brand as={NavLink} to="/" className="nav-brand">
           lyricFinder

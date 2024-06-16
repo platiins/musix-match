@@ -43,7 +43,7 @@ const ArtistSongs = () => {
       {error && (
         <div className="error-container">
           <p className="error-message">{error}</p>
-          <Card.Link to={`/`} as={Link}>
+          <Card.Link className="link-style" to={`/`} as={Link}>
             Back to Search
           </Card.Link>
         </div>
@@ -51,10 +51,16 @@ const ArtistSongs = () => {
       <div className="all-songs-container">
         {songs.map((allSongs) => (
           <Card className="song-card">
-            <Card.Body>
-              <Card.Title>{allSongs.track.track_name}</Card.Title>
-              <Card.Text>Album: {allSongs.track.album_name}</Card.Text>
-              <Card.Link to={`/lyrics/${allSongs.track.track_id}`} as={Link}>
+            <Card.Body className="song-card__body">
+              <div className="song-card__body--name">
+                <Card.Title>{allSongs.track.track_name}</Card.Title>
+                <Card.Text>Album: {allSongs.track.album_name}</Card.Text>
+              </div>
+              <Card.Link
+                className="link-style"
+                to={`/lyrics/${allSongs.track.track_id}`}
+                as={Link}
+              >
                 View Lyrics
               </Card.Link>
             </Card.Body>
