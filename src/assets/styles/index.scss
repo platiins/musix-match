@@ -255,18 +255,16 @@
     text-align: center;
     padding: 30px 20px;
     border: #000000 solid 1px;
-    overflow-y: scroll;
+    text-wrap: wrap;
 
     &:hover {
       box-shadow: 0 0 5px #000000;
     }
-    &::-webkit-scrollbar {
-      background-color: transparent;
-    }
   }
 
   .share-container {
-    @include flex(row, center, center, 20px);
+    @include flex(row, center, center, 10px);
+    padding: 0 20px;
 
     .share-title {
       font-size: 22px;

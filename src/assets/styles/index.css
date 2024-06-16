@@ -278,20 +278,18 @@
   text-align: center;
   padding: 30px 20px;
   border: #000000 solid 1px;
-  overflow-y: scroll;
+  text-wrap: wrap;
 }
 #lyrics-page .lyrics-text:hover {
   box-shadow: 0 0 5px #000000;
-}
-#lyrics-page .lyrics-text::-webkit-scrollbar {
-  background-color: transparent;
 }
 #lyrics-page .share-container {
   display: flex;
   flex-flow: row;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
+  padding: 0 20px;
 }
 #lyrics-page .share-container .share-title {
   font-size: 22px;
