@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { searchArtists } from "../API/musixMatch.js";
 import { Link } from "react-router-dom";
 import { FiSearch } from "react-icons/fi";
@@ -6,12 +6,14 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import Card from "react-bootstrap/Card";
+import "../assets/styles/index.scss";
+import { ThemeContext } from "../context/theme";
 
 import Loader from "./Loader.js";
 
-import "../assets/styles/index.scss";
-
 const ArtistsSearch = () => {
+  const { theme } = useContext(ThemeContext);
+
   const [artistName, setArtistName] = useState("");
   const [artists, setArtists] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -28,7 +30,7 @@ const ArtistsSearch = () => {
         setError("No matching results. Please double-check your request.");
       }
     } catch (err) {
-      setError("Network issue. Please check the connection.");
+      setError("Too Many Requests. Please try later.");
     }
     setLoading(false);
   };
@@ -36,7 +38,10 @@ const ArtistsSearch = () => {
   if (loading) return <Loader />;
 
   return (
-    <section id="search-page">
+    <section
+      id="search-page"
+      style={{ backgroundColor: theme === "light" ? "#f8f9fa" : "#343A40" }}
+    >
       <section className="artist-search">
         <h1 className="artist-search__title">Search Artists:</h1>
         <InputGroup className="artist-search__input-box">

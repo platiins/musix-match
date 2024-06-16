@@ -27,7 +27,7 @@ const SongsLyrics = () => {
         const lyricsData = await getSongLyrics(trackId);
         setLyrics(lyricsData);
       } catch (err) {
-        setError("Network issue. Please check the connection.");
+        setError("Too Many Requests. Please try later.");
       }
       setLoading(false);
     };

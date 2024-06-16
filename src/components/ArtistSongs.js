@@ -24,7 +24,7 @@ const ArtistSongs = () => {
           setError("No song records found.");
         }
       } catch (err) {
-        setError("Network issue. Please check the connection.");
+        setError("Too Many Requests. Please try later.");
       }
       setLoading(false);
     };
@@ -50,7 +50,7 @@ const ArtistSongs = () => {
       )}
       <div className="all-songs-container">
         {songs.map((allSongs) => (
-          <Card className="song-card">
+          <Card className="song-card" key={allSongs.track.track_id}>
             <Card.Body className="song-card__body">
               <div className="song-card__body--name">
                 <Card.Title>{allSongs.track.track_name}</Card.Title>

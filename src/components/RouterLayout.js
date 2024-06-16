@@ -1,16 +1,21 @@
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
+import Footer from "./Footer";
+import { ThemeProvider } from "../context/theme";
 
 function RouterLayout() {
   return (
-    <div>
+    <ThemeProvider>
       <header>
         <Header />
       </header>
       <main>
         <Outlet></Outlet>
       </main>
-    </div>
+      <footer>
+        <Footer />
+      </footer>
+    </ThemeProvider>
   );
 }
 
