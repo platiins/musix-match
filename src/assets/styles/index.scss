@@ -62,6 +62,7 @@
 
   .error-code {
     font-size: 50px;
+    margin: 0;
   }
 
   .home-link {
@@ -213,10 +214,10 @@
       width: 40%;
       min-width: 350px;
       background-color: #f8f9fa;
+      border: solid 1px #000000;
 
       &:hover {
         box-shadow: 0 0 15px #000000;
-        border: solid 1px #000000;
       }
 
       &__body {
@@ -244,6 +245,7 @@
   font-family: "Syne Mono", monospace;
   background-color: #f8f9fa;
   padding: 30px 50px 120px;
+  height: 90vh;
 
   .lyrics-title {
     font-size: 30px;
@@ -257,10 +259,10 @@
     border-radius: 6px;
     text-align: center;
     padding: 30px 20px;
+    border: #000000 solid 1px;
 
     &:hover {
       box-shadow: 0 0 5px #000000;
-      border: #000000 solid 1px;
     }
   }
 

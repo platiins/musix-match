@@ -79,7 +79,16 @@ const ArtistsSearch = () => {
           </Button>
         </InputGroup>
       </section>
-      {error && <p className="error-message">{error}</p>}
+      {error && (
+        <p
+          className="error-message"
+          style={{
+            color: theme === "light" ? "#212529" : "#F8F9FA",
+          }}
+        >
+          {error}
+        </p>
+      )}
 
       <div className="artists-list">
         {artists.map((allArtists) => (
