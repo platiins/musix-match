@@ -27,10 +27,12 @@ const ArtistsSearch = () => {
       setArtists(artistData);
 
       if (artistData.length === 0) {
-        setError("No matching results. Please double-check your request.");
+        setError("No matching results.\nPlease double-check your request.");
       }
     } catch (err) {
-      setError("Too Many Requests. Please try later.");
+      setError(
+        "Unable to retrieve song lyrics at the moment.\nPlease ensure you have enabled the temporary proxy server.\nIf the issue persists, try again later."
+      );
     }
     setLoading(false);
   };
@@ -80,14 +82,26 @@ const ArtistsSearch = () => {
         </InputGroup>
       </section>
       {error && (
-        <p
+        <div
           className="error-message"
           style={{
             color: theme === "light" ? "#212529" : "#F8F9FA",
+            whiteSpace: "pre-wrap",
           }}
         >
           {error}
-        </p>
+          <button className="proxy-btn">
+            <a
+              href="https://cors-anywhere.herokuapp.com/corsdemo"
+              style={{
+                color: theme === "light" ? "#212529" : "#F8F9FA",
+                whiteSpace: "pre-wrap",
+              }}
+            >
+              DEMO PROXY SERVER
+            </a>
+          </button>
+        </div>
       )}
 
       <div className="artists-list">

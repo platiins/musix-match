@@ -9,9 +9,30 @@
 // HELPERS
 
 .error-message {
+  @include flex(column, center, center, 50px);
   text-align: center;
   font-size: 18px;
   margin: 0 50px;
+
+  .proxy-btn {
+    border: 1px solid #212529;
+    border-radius: 6px;
+    padding: 10px 15px;
+    background-color: transparent;
+
+    &:hover {
+      box-shadow: 0 0 10px #000000;
+    }
+
+    a {
+      text-decoration: none;
+      color: #212529;
+
+      &:focus {
+        color: inherit;
+      }
+    }
+  }
 }
 
 .link-style {

@@ -4,9 +4,30 @@
   font-weight: 400;
 }
 .error-message {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
   text-align: center;
   font-size: 18px;
   margin: 0 50px;
+}
+.error-message .proxy-btn {
+  border: 1px solid #212529;
+  border-radius: 6px;
+  padding: 10px 15px;
+  background-color: transparent;
+}
+.error-message .proxy-btn:hover {
+  box-shadow: 0 0 10px #000000;
+}
+.error-message .proxy-btn a {
+  text-decoration: none;
+  color: #212529;
+}
+.error-message .proxy-btn a:focus {
+  color: inherit;
 }
 
 .link-style {

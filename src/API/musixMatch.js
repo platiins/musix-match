@@ -23,7 +23,7 @@ export const getArtistSongs = async (artistId) => {
     params: {
       apikey: API_KEY,
       f_artist_id: artistId,
-      // page_size: 10,
+      page_size: 10,
       s_track_rating: "desc",
     },
   });

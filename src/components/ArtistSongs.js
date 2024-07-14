@@ -25,7 +25,7 @@ const ArtistSongs = () => {
           setError("No song records found.");
         }
       } catch (err) {
-        setError("Too Many Requests. Please try later.");
+        setError("Too Many Requests.\nPlease try later.");
       }
       setLoading(false);
     };
@@ -58,6 +58,7 @@ const ArtistSongs = () => {
           className="error-container"
           style={{
             color: theme === "light" ? "#212529" : "#F8F9FA",
+            whiteSpace: "pre-wrap",
           }}
         >
           <p className="error-message">{error}</p>
